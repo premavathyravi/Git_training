@@ -291,21 +291,21 @@ print_r(odd_occurrence($num1)."<br>");
 function is_Power_of_four($n)
 {
    $x = $n;
-   while ($x % 4 == 0) 
+   while ($x % 2 == 0) 
    {
-       $x /= 4;
+       $x /= 2;
    }
        
    if($x == 1)
     {
-       return "$n is power of 4";
+       return "$n is power of 2";
     }
     else
     {
-        return "$n is not power of 4";
+        return "$n is not power of 2";
     }
   
 }
-print_r(is_Power_of_four(36)."<br>");
+print_r(is_Power_of_four(4)."<br>");
 ?>
 
