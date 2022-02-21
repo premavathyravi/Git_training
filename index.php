@@ -224,32 +224,6 @@ var_dump(is_str_lowercase('abc def ghi'));
 var_dump(is_str_lowercase('abc dEf ghi'));
 ?>
 
-
-
-<h1>CLASSES</h1>
-<h2>1.Write a simple PHP class which displays the following string</h2>
-
-
-<?php
-class phpclass
-{
-	public function __construct()
-	{
-	   echo 'MyClass class has initialized !';
-	}
-}
-
-echo new phpclass();
-?>
-
-<h2>2.Write a PHP script to convert a string to Date and DateTime.Sample Date :'12-08-2004'Expected Output :2004-12-08Note : PHP considers '/' to mean m/d/Y format and '-' to mean d-m-Y format.</h2>
-
-
-<?php
-$datetime = DateTime::createFromFormat('m-d-Y', '12-08-2004')->format('Y-m-d');
-echo $datetime;
-?>
-
 <h1>SEARCHING&SORTING</h1>
 
 <h2>1.Write a PHP program tosort a list of elements using Quick sort.Quick sort is a comparison sort, meaning that it can sort items of any type for which a "less-than" relation (formally, a total order) is defined.</h2>
@@ -334,3 +308,4 @@ function is_Power_of_four($n)
 }
 print_r(is_Power_of_four(36)."<br>");
 ?>
+
