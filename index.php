@@ -18,11 +18,6 @@ print_r($viewer);
 <?php echo "Output:    ".$_SERVER['SCRIPT_NAME'];?>
 
 
-
-<h2>1.Write a PHP program to find the length of the last word in a string.Input : PHP Exercises</h2>
-
-<?php echo "Output:    ".strlen(substr('PHP Exercises',4));?>
-
 <h2>4.Write a ePHP script to display string, values within a table.Note : Use HTML table elements into echo</h2>
 
 <html>
@@ -161,7 +156,7 @@ for($x=1;$x<=5;$x++)
 <h2>2.Write a program to calculate and print the factorial of a number using a for loop. The factorial of a number is the product of all integers up to and including that number, so the factorial of 4 is 4*3*2*1= 24</h2>
 
 <?php
-$n = 6;
+$n = 4;
 $x = 1;
 for($i=1;$i<=$n-1;$i++)
 {
@@ -255,13 +250,57 @@ $datetime = DateTime::createFromFormat('m-d-Y', '12-08-2004')->format('Y-m-d');
 echo $datetime;
 ?>
 
+<h1>SEARCHING&SORTING</h1>
+
+<h2>1.Write a PHP program tosort a list of elements using Quick sort.Quick sort is a comparison sort, meaning that it can sort items of any type for which a "less-than" relation (formally, a total order) is defined.</h2>
 
 
-/*function odd_occurrence($arr)
+<?php
+function quick_sort($my_array)
+{
+	$arr1 = $arr2 = array();
+	if(count($my_array) < 2)
+	{
+	    return $my_array;
+	}
+	$key = key($my_array);
+	$shift = array_shift($my_array);
+	foreach($my_array as $val)
+	{
+		if($val <= $shift)
+		{
+		    $arr1[] = $val;
+		}
+		elseif ($val > $shift)
+		{
+		    $arr2[] = $val;
+		}
+	}
+	return array_merge(quick_sort($arr1),array($key=>$shift),quick_sort($arr2));
+}
+ 
+$my_array = array(3, 0, 2, 5, -1, 4, 1);
+echo 'Original Array : '.implode(',',$my_array).'\n';
+$my_array = quick_sort($my_array);
+echo 'Sorted Array : '.implode(',',$my_array);
+?>
+
+
+<h1>CHALLENGING ONES</h1>
+
+
+<h2>1.Write a PHP program to find the length of the last word in a string.Input : PHP Exercises</h2>
+
+<?php echo "Output:    ".strlen(substr('PHP Exercises',4));?>
+
+<h2>2.Write a PHP program to find the single number which occurs odd number of times and other numbers occur even number of times.Input : 4, 5, 4, 5, 2, 2, 3, 3, 2, 4, 4Output : 2</h2>
+
+
+<?php
+function odd_occurrence($arr)
 {
     $result = 0;
-     
-    # Traverse the array
+
     foreach ($arr as &$value)
     {
         $result = $result ^ $value;
@@ -269,4 +308,29 @@ echo $datetime;
     return $result;
 }
 $num1 = array(4, 5, 4, 5, 2, 2, 3, 3, 2, 4, 4);
-print_r(odd_occurrence($num1)."\n");*/
+print_r(odd_occurrence($num1)."<br>");
+?>
+
+<h2>3.Write a PHP program to check if a given positive integer is a power of two.Input : 4Output :4 is power of 2</h2>
+
+<?php
+function is_Power_of_four($n)
+{
+   $x = $n;
+   while ($x % 4 == 0) 
+   {
+       $x /= 4;
+   }
+       
+   if($x == 1)
+    {
+       return "$n is power of 4";
+    }
+    else
+    {
+        return "$n is not power of 4";
+    }
+  
+}
+print_r(is_Power_of_four(36)."<br>");
+?>
